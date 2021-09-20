@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -9,26 +10,29 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="433.0" prefWidth="407.0" style="-fx-background-color: rgba(0, 0, 0,0);" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Calculator">
+<AnchorPane prefHeight="494.0" prefWidth="507.0" style="-fx-background-color: rgba(0, 0, 0,0);" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Calculator">
    <children>
-      <VBox layoutX="4.0" prefHeight="600.0" prefWidth="500.0" style="-fx-background-color: #111111; -fx-background-radius: 15;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <VBox layoutX="4.0" prefHeight="496.0" prefWidth="507.0" style="-fx-background-color: #111111; -fx-background-radius: 25;" AnchorPane.bottomAnchor="-13.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label fx:id="lblNub" prefHeight="178.0" prefWidth="399.0" textFill="RED">
+            <Label fx:id="lblNub" contentDisplay="CENTER" prefHeight="142.0" prefWidth="508.0" text="0" textAlignment="RIGHT" textFill="WHITE">
                <font>
-                  <Font size="51.0" />
-               </font></Label>
-            <GridPane prefHeight="250.0" prefWidth="399.0">
+                  <Font name="System Bold" size="51.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="DISAPPEAR" />
+               </cursor></Label>
+            <GridPane alignment="CENTER" hgap="8.0" prefHeight="321.0" prefWidth="492.0" vgap="8.0">
               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="103.1999755859375" minWidth="-Infinity" prefWidth="102.39998779296874" />
+                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="99.20003662109374" minWidth="-Infinity" prefWidth="83.20001220703128" />
+                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="103.20002441406251" minWidth="-Infinity" prefWidth="96.00001220703126" />
+                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.20001220703125" minWidth="-Infinity" prefWidth="84.79998779296875" />
               </columnConstraints>
               <rowConstraints>
-                  <RowConstraints maxHeight="59.000006103515624" minHeight="10.0" prefHeight="59.000006103515624" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="60.60001220703125" minHeight="10.0" prefHeight="60.2" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="62.79998779296875" minHeight="10.0" prefHeight="60.4000244140625" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="64.80003662109374" minHeight="10.0" prefHeight="57.60002441406249" vgrow="SOMETIMES" />
+                 <RowConstraints maxHeight="83.20001831054688" minHeight="-Infinity" prefHeight="83.20001831054688" vgrow="SOMETIMES" />
+                 <RowConstraints maxHeight="63.20002899169921" minHeight="-Infinity" prefHeight="63.20002899169921" vgrow="SOMETIMES" />
+                 <RowConstraints maxHeight="82.4000244140625" minHeight="-Infinity" prefHeight="60.79998779296875" vgrow="SOMETIMES" />
+                 <RowConstraints maxHeight="81.60001220703128" minHeight="-Infinity" prefHeight="31.20001220703125" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
                   <Button mnemonicParsing="false" onAction="#onNumberButtonClicked" style="-fx-background-radius: 100;" text="6" GridPane.columnIndex="2" GridPane.rowIndex="1">
@@ -76,38 +80,44 @@
                         <Font name="Lucida Bright" size="27.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#onNumberButtonClicked" style="-fx-background-radius: 100;" text="7">
+                  <Button mnemonicParsing="false" onAction="#onNumberButtonClicked" prefWidth="54.0" style="-fx-background-radius: 100;" text="7">
                      <font>
                         <Font name="Lucida Bright" size="27.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="47.0" prefWidth="100.0" text="AC" GridPane.columnIndex="3">
+                  <Button mnemonicParsing="false" onAction="#clearDisplay" prefHeight="47.0" prefWidth="100.0" style="-fx-background-color: #2ecc71; -fx-background-radius: 20;" text="AC" textFill="WHITE" GridPane.columnIndex="3">
                      <font>
-                        <Font name="System Bold" size="23.0" />
+                        <Font name="Arial Black" size="23.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="47.0" prefWidth="100.0" text="+" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                  <Button mnemonicParsing="false" onAction="#onOperatorButtonClicked" prefHeight="47.0" prefWidth="100.0" style="-fx-background-color: #2ecc71; -fx-background-radius: 20;" text="+" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="1">
                      <font>
-                        <Font name="System Bold" size="23.0" />
+                        <Font name="Arial Black" size="23.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="47.0" prefWidth="100.0" text="-" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                  <Button mnemonicParsing="false" onAction="#onOperatorButtonClicked" prefHeight="47.0" prefWidth="100.0" style="-fx-background-color: #2ecc71; -fx-background-radius: 20;" text="-" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="2">
                      <font>
-                        <Font name="System Bold" size="23.0" />
+                        <Font name="Arial Black" size="23.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="85.0" text="×" GridPane.rowIndex="3">
+                  <Button mnemonicParsing="false" onAction="#onOperatorButtonClicked" prefHeight="50.0" prefWidth="85.0" style="-fx-background-color: #2ecc71; -fx-background-radius: 20;" text="×" textFill="WHITE" GridPane.rowIndex="3">
                      <font>
-                        <Font name="System Bold" size="23.0" />
+                        <Font name="Arial Black" size="23.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="85.0" text="÷" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                  <Button mnemonicParsing="false" onAction="#onOperatorButtonClicked" prefHeight="50.0" prefWidth="96.0" style="-fx-background-color: #2ecc71; -fx-background-radius: 20;" text="÷" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="3">
                      <font>
-                        <Font name="System Bold" size="23.0" />
+                        <Font name="Arial Black" size="23.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#onOperatorButtonClicked" prefHeight="86.0" prefWidth="96.0" style="-fx-background-color: #2ecc71; -fx-background-radius: 20;" text="=" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Arial Black" size="23.0" />
                      </font>
                   </Button>
                </children>
             </GridPane>
+            <Label alignment="CENTER" contentDisplay="CENTER" opacity="0.46" prefHeight="54.0" prefWidth="507.0" text="Sasindu Thashmira Munasinghe" textAlignment="CENTER" textFill="WHITE" />
          </children>
       </VBox>
    </children>
